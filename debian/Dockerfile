@@ -2,8 +2,8 @@ FROM debian:stretch-slim
 
 MAINTAINER Guillaume CONNAN "guillaume.connan44@gmail.com"
 
-LABEL version="0.1.0"                          \
-      carbon-c-relay_version="3.1 (95f2c5)"
+LABEL version="0.1.1"                          \
+      carbon-c-relay_version="3.1 (c85863)"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -30,7 +30,7 @@ RUN (                                                                           
             touch configure.ac Makefile.am aclocal.m4 configure                             \
                   Makefile.in config.h.in                                                && \
             export CC=gcc                                                                && \
-            ./configure                                                                  && \
+            ./configure --with-gzip --with-bzip2 --with-ssl                              && \
             make CFLAGS="-O3 -Wall -Werror -Wshadow -pipe"                                  \
                  LIBS="-lcrypto -lpthread -lm"                                              \
         )                                                                                && \
