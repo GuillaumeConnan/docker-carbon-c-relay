@@ -2,8 +2,8 @@ FROM debian:stretch-slim
 
 MAINTAINER Guillaume CONNAN "guillaume.connan44@gmail.com"
 
-LABEL version="0.1.1"                          \
-      carbon-c-relay_version="3.1 (c85863)"
+LABEL version="0.1.2"                          \
+      carbon-c-relay_version="3.1 (3a84f9)"
 
 ENV DEBIAN_FRONTEND noninteractive
 
