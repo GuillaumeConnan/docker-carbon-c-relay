@@ -2,7 +2,7 @@ FROM debian:stretch-slim
 
 MAINTAINER Guillaume CONNAN "guillaume.connan44@gmail.com"
 
-LABEL version="0.3.0"
+LABEL version="0.3.1"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -29,7 +29,7 @@ RUN (                                                                           
             touch configure.ac Makefile.am aclocal.m4 configure                             \
                   Makefile.in config.h.in                                                && \
             export CC=gcc                                                                && \
-            ./configure --with-gzip --with-lza4 --with-ssl                               && \
+            ./configure --with-gzip --with-lz4 --with-ssl                                && \
             make CFLAGS="-O3 -Wall -Werror -Wshadow -pipe"                                  \
                  LIBS="-lcrypto -lpthread -lm"                                              \
         )                                                                                && \
