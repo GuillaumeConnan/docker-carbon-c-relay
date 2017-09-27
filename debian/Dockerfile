@@ -2,7 +2,7 @@ FROM debian:stretch-slim
 
 MAINTAINER Guillaume CONNAN "guillaume.connan44@gmail.com"
 
-LABEL version="0.3.1"
+LABEL version="0.3.3"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -18,8 +18,8 @@ RUN (                                                                           
         apt-get -y -q dist-upgrade                                                       && \
         apt-get -y -q autoclean                                                          && \
         apt-get -y -q autoremove                                                         && \
-        apt-get -y -q install build-essential git liblz4-dev libssl-dev                     \
-                      sudo zlib1g-dev                                                    && \
+        apt-get -y -q install build-essential git liblz4-1 liblz4-dev                       \
+                      libssl-dev sudo zlib1g-dev                                         && \
         git clone --quiet                                                                   \
                   https://github.com/grobian/carbon-c-relay.git                             \
                   /carbon-c-relay                                                        && \
